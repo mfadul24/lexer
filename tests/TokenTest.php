@@ -11,11 +11,12 @@ final class TokenTest extends TestCase
 {
     public function testIsA(): void
     {
-        /** @var Token<'string'|'int', string> $token */
+        /** @var Token<'string'|'int'|'float'|'null'|'bool', string> $token */
         $token = new Token('foo', 'string', 1);
 
         self::assertTrue($token->isA('string'));
         self::assertTrue($token->isA('int', 'string'));
         self::assertFalse($token->isA('int'));
     }
+
 }
